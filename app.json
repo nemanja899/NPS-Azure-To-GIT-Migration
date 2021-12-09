@@ -26,7 +26,7 @@
     "includeSourceInSymbolFile": false
   },
   "runtime": "8.0",
-  "target": "OnPrem",
+  "target": "Cloud",
   "features": [
     "TranslationFile",
     "GenerateCaptions"
