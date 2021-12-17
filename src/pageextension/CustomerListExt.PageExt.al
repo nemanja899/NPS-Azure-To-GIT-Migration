@@ -6,6 +6,9 @@ pageextension 50100 "Customer List Ext" extends "Customer List"
 {
     trigger OnOpenPage();
     begin
-        Message('App published: Hello world');
+        Message(NEstoLbl);
     end;
+
+    var
+        NEstoLbl: Label 'App published: Hello world';
 }
