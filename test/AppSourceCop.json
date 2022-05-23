@@ -1,0 +1,9 @@
+{
+    "mandatoryAffixes": [ "LMS" ],
+    "name": "Biz365 Starter Pack - Test Automation",
+    "publisher": "NPS d.o.o.",
+    "supportedCountries": [
+        "US",
+        "RS"
+      ]
+}

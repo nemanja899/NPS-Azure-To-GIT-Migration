@@ -1,4 +1,7 @@
 *.app
-.vscode/*
-.alpackages/*
-!.vscode/settings.json
+*/.vscode/*
+*/.alpackages/*
+!*/.vscode/settings.json
+!*/.vscode/tasks.json
+!*/.vscode/extensions.json
+!*/.vscode/nps.ruleset.json

@@ -1,0 +1,32 @@
+trigger: none
+  
+pool:
+  name: Default
+
+name: $(Build.BuildID)
+
+workspace:
+  clean: all
+
+resources:
+  repositories:
+    - repository: nps-build-scripts
+      type: git
+      name: Business Central Localization/nps-build-scripts
+      ref: master
+
+variables:
+  - template: .azureDevOps/pipeline-variables.yml@nps-build-scripts
+  - name: version
+    value: 'ci'
+  - name: appBuild
+    value: $(Build.BuildID)
+  - name: appRevision
+    value: 0
+  - name: pte
+    value: $false
+  - name: pteCH
+    value: $true
+steps:
+  - template: .azureDevOps/pipeline-download-LOOMIS-API.yml@nps-build-scripts
+  - template: .azureDevOps/pipeline-validation.yml@nps-build-scripts

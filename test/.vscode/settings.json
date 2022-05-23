@@ -1,0 +1,22 @@
+{
+    "al.codeAnalyzers": [
+        "${PerTenantExtensionCop}",
+        "${CodeCop}",
+        "${UICop}"
+    ],
+    "al.enableCodeAnalysis": true,
+    //"al.ruleSetPath": ".vscode/nps.ruleset.json",
+    "al.packageCachePath": "./.alpackages",
+    "al.backgroundCodeAnalysis": true,
+    "window.zoomLevel": 0,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "CRS.ObjectNamePrefix": "LMS",
+    "CRS.OnSaveAlFileAction": "Rename",
+    "CRS.RemovePrefixFromFilename": true,
+    "CRS.FileNamePattern": "<Prefix><ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternExtensions": "<Prefix><ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternPageCustomizations": "<Prefix><ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.RenameWithGit": true,
+    "files.autoSave": "off"
+}

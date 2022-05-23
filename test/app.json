@@ -1,0 +1,67 @@
+{
+  "id": "55e737f0-2a0f-453b-a7db-389bccffd0a2",
+  "name": "Loomis API Test Automation",
+  "publisher": "NPS d.o.o.",
+  "version": "20.0.220420.1",
+  "brief": "Loomis API Test Automation",
+  "description": "Loomis API Test Automation",
+  "privacyStatement": "https://biz365.rs/privacy-policy/",
+  "EULA": "https://biz365.rs/end-user-license-agreement-eula/",
+  "help": "https://biz365.rs/en/help/",
+  "url": "https://biz365.rs/plans-pricing/",
+  "logo": "./images/nps-logo.jpg",
+  "contextSensitiveHelpUrl": "https://biz365.rs/en/help/",
+  "applicationInsightsConnectionString": "InstrumentationKey=697002d3-7182-4876-bfa1-6ef0cba1905f;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/",
+  "dependencies": [
+   {
+    "id": "325d9415-daf9-44eb-95d2-102c6a7ba5dc",
+    "name": "Loomis API",
+    "publisher": "NPS d.o.o.",
+    "version": "20.0.0.0"
+   },
+   {
+    "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+    "publisher": "Microsoft",
+    "name": "Library Assert",
+    "version": "20.0.0.0"
+  },
+  {
+    "id": "e7320ebb-08b3-4406-b1ec-b4927d3e280b",
+    "publisher": "Microsoft",
+    "name": "Any",
+    "version": "20.0.0.0"
+  },
+  {
+    "id": "9856ae4f-d1a7-46ef-89bb-6ef056398228",
+    "publisher": "Microsoft",
+    "name": "System Application Test Library",
+    "version": "20.0.0.0"
+  },
+  {
+    "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+    "publisher": "Microsoft",
+     "name": "Tests-TestLibraries",
+     "version": "20.0.0.0"
+  }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 70046,
+      "to": 70049
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "9.0",
+  "target": "Cloud",
+  "features": [
+    "TranslationFile",
+    "GenerateCaptions"
+  ]
+}
