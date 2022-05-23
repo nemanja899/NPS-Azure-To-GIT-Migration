@@ -1,12 +1,4 @@
-trigger:
-  batch: true
-  branches:
-    include:
-      - master
-  paths:
-    exclude:
-      - scripts/*
-      - .azureDevOps/*
+trigger: none
 
 pool:
   name: Default

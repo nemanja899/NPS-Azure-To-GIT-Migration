@@ -1,0 +1,33 @@
+{
+  "id": "7901c58d-a7ce-4fe9-a4e8-009f42b39c59",
+  "name": "DEV",
+  "publisher": "NPS d.o.o.",
+  "version": "20.1.20220523.01",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0",
+  "target": "Cloud",
+  "features": [
+    "TranslationFile"
+  ]
+}
