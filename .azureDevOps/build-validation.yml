@@ -24,9 +24,9 @@ variables:
   - name: appRevision
     value: 0
   - name: pte
-    value: $false
-  - name: pteCH
     value: $true
+  - name: pteCH
+    value: $false
 steps:
   - template: .azureDevOps/pipeline-download-LOOMIS-API.yml@nps-build-scripts
   - template: .azureDevOps/pipeline-validation.yml@nps-build-scripts
