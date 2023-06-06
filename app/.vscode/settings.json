@@ -1,23 +1,6 @@
 {
-    "al.codeAnalyzers": [
-        "${PerTenantExtensionCop}",
-        "${CodeCop}",
-        "${UICop}"
-    ],
     "al.enableCodeAnalysis": true,
-    //"al.ruleSetPath": ".vscode/nps.ruleset.json",
-    "al.packageCachePath": "./.alpackages",
-    "al.backgroundCodeAnalysis": true,
-    "window.zoomLevel": 0,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    // "CRS.ObjectNamePrefix": "NPS ",
-    "CRS.OnSaveAlFileAction": "Rename",
-    "CRS.RemovePrefixFromFilename": true,
-    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
-    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
-    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
-    "CRS.RenameWithGit": true,
-    "files.autoSave": "onFocusChange",
-    // "files.autoSaveDelay": 5000
+    "al.codeAnalyzers": [
+        "${CodeCop}"
+    ]
 }

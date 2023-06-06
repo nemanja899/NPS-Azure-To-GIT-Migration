@@ -1,33 +1,32 @@
 {
-  "id": "1547e6af-b4b3-4213-94bd-0e982e458e5d",
+  "id": "bfca9006-84a8-440c-b591-39fc15a06aa9",
   "name": "GRITS",
-  "publisher": "NPS d.o.o.",
-  "version": "20.1.20220523.01",
-  "brief": "",
-  "description": "",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
+  "publisher": "Nemanja",
+  "version": "1.0.0.0",
+  "brief": "GRITS",
+  "description": "Manage reservations for golf club Reservation Information Tracking System",
+  "privacyStatement": "https://www.golfclub.com/privacy.html",
+  "EULA": "https://www.golfclub.com/licence.html",
+  "help": "https://www.golfclub.com/help.html",
+  "url": "https://www.golfclub.com/package",
+  "logo": "./res/R.jpeg",
   "dependencies": [],
   "screenshots": [],
   "platform": "1.0.0.0",
-  "application": "20.0.0.0",
+  "application": "22.0.0.0",
   "idRanges": [
     {
-      "from": 50000,
-      "to": 99999
+      "from": 50101,
+      "to": 50104
     }
   ],
   "resourceExposurePolicy": {
     "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
   },
-  "runtime": "9.0",
-  "target": "Cloud",
+  "runtime": "11.0",
   "features": [
-    "TranslationFile"
+    "NoImplicitWith"
   ]
 }
