@@ -86,22 +86,16 @@ page 50103 "Reservation Journal"
                 var
                     ResJnlLists: Record "Reservation Jnl Line";
                     ResLdgEnt: Record "Reservation Ledger Entry";
+                    PostBatchResJnlToLedger: Codeunit "Res. Jnl. Line - Post Batch";
                 begin
                     if Confirm('Are you sure you want to post Journal in Ledger') then begin
-                        ResJnlLists.SetFilter("No.", '*');
-                        ResJnlLists.FindSet();
-                        OnPostBatchResJnlToLedger(ResJnlLists, ResLdgEnt);
+                        PostBatchResJnlToLedger.RunOnPostBatchResJnlToLedger(ResJnlLists, ResLdgEnt);
                         Message('Posting Successfull');
                     end;
                 end;
             }
         }
     }
-
-    [IntegrationEvent(false, false)]
-    local procedure OnPostBatchResJnlToLedger(fromTable: Record "Reservation Jnl Line"; toTable: Record "Reservation Ledger Entry");
-    begin
-    end;
 
 
 }

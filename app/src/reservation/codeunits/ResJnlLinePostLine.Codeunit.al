@@ -1,9 +1,6 @@
 codeunit 50102 "Res. Jnl. Line - Post Line"
 {
-    EventSubscriberInstance = StaticAutomatic;
-
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Res. Jnl. Line - Post Batch", 'OnPostResJnlLineRecordToLedger', '', false, false)]
-    local procedure RunOnPostResJnlLineRecordToLedger(fromTable: Record "Reservation Jnl Line"; toTable: Record "Reservation Ledger Entry")
+    procedure RunOnPostResJnlLineRecordToLedger(fromTable: Record "Reservation Jnl Line"; toTable: Record "Reservation Ledger Entry")
     begin
         toTable.Init();
         toTable."Golf Course No." := fromTable."Golf Course No.";

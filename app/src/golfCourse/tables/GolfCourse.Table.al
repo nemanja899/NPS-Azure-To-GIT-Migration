@@ -3,8 +3,7 @@ table 50101 "Golf Course"
 
     Caption = 'Golf Course';
     DataClassification = CustomerContent;
-    DrillDownPageId = "Reservation Ledger Entries";
-    LookupPageId = "Reservation Ledger Entries";
+
 
     fields
     {
@@ -38,6 +37,7 @@ table 50101 "Golf Course"
             Editable = false;
             CalcFormula = count("Reservation Ledger Entry" where("Golf Course No." = field("No."),
             "Date of Play" = field("Date Range")));
+
         }
 
         field(6; "Total Amount"; Decimal)
@@ -72,15 +72,15 @@ table 50101 "Golf Course"
         }
     }
     var
-        ReservationSetup: Record "Marketing Setup";
-        NoSeriesMgmt: Codeunit NoSeriesManagement;
+        MarketingSetup: Record "Marketing Setup";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
     begin
         if "No." = '' then begin
-            ReservationSetup.Get();
-            ReservationSetup.TestField("Segment Nos.");
-            NoSeriesMgmt.InitSeries(ReservationSetup."Segment Nos.", xRec."No.", 0D, "No.", "No. Series");
+            MarketingSetup.Get();
+            MarketingSetup.TestField("Segment Nos.");
+            NoSeriesManagement.InitSeries(MarketingSetup."Segment Nos.", xRec."No.", 0D, "No.", "No. Series");
         end;
 
     end;

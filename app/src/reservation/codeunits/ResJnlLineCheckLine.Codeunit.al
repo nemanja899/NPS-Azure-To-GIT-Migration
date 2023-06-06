@@ -1,9 +1,7 @@
 codeunit 50101 "Res. Jnl. Line - Check Line"
 {
-    EventSubscriberInstance = StaticAutomatic;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Res. Jnl. Line - Post Batch", 'OnValidateResJnlRecord', '', false, false)]
-    local procedure RunOnValidateResJnlRecord(fromTable: Record "Reservation Jnl Line")
+    procedure RunOnValidateResJnlRecord(fromTable: Record "Reservation Jnl Line")
     var
         PostValidationEmptyErr: Label '%1 Can not be empty from No. %2';
         PostValidationValueErr: Label '%1 is not valid because it %2 from No. %3', Comment = '%1 status field value';

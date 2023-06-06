@@ -74,19 +74,21 @@ table 50104 "Reservation Ledger Entry"
         key(PK; "No.")
         {
             Clustered = true;
+            SumIndexFields = "Total Fee";
         }
+
     }
 
     var
-        ReservationSetup: Record "Marketing Setup";
-        NoSeriesMgmt: Codeunit NoSeriesManagement;
+        MarketingSetup: Record "Marketing Setup";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
     begin
         if "No." = '' then begin
-            ReservationSetup.Get();
-            ReservationSetup.TestField("Campaign Nos.");
-            NoSeriesMgmt.InitSeries(ReservationSetup."Campaign Nos.", xRec."No.", 0D, "No.", "No. Series");
+            MarketingSetup.Get();
+            MarketingSetup.TestField("Campaign Nos.");
+            NoSeriesManagement.InitSeries(MarketingSetup."Campaign Nos.", xRec."No.", 0D, "No.", "No. Series");
         end;
     end;
 

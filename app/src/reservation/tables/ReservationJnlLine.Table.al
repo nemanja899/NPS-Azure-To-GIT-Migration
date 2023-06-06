@@ -99,15 +99,15 @@ table 50103 "Reservation Jnl Line"
 
 
     var
-        ReservationSetup: Record "Marketing Setup";
-        NoSeriesMgmt: Codeunit NoSeriesManagement;
+        MarketingSetup: Record "Marketing Setup";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
     begin
         if "No." = '' then begin
-            ReservationSetup.Get();
-            ReservationSetup.TestField("Contact Nos.");
-            NoSeriesMgmt.InitSeries(ReservationSetup."Contact Nos.", xRec."No.", 0D, "No.", "No. Series");
+            MarketingSetup.Get();
+            MarketingSetup.TestField("Contact Nos.");
+            NoSeriesManagement.InitSeries(MarketingSetup."Contact Nos.", xRec."No.", 0D, "No.", "No. Series");
         end;
     end;
 
