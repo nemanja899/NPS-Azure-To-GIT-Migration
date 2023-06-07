@@ -1,10 +1,10 @@
 {
-  "id": "aa437269-aa00-457a-8c82-3576801c3ccc",
-  "name": "DEV Test Automation",
+  "id": "eea01e6c-e03c-4a74-88df-59df5a17e7a7",
+  "name": "GRITS Test Automation",
   "publisher": "NPS d.o.o.",
-  "version": "20.0.220420.1",
+  "version": "21.0.0.0",
   "brief": "DEV Test Automation",
-  "description": "DEV Test Automation",
+  "description": "GRITS Test Automation",
   "privacyStatement": "https://biz365.rs/privacy-policy/",
   "EULA": "https://biz365.rs/end-user-license-agreement-eula/",
   "help": "https://biz365.rs/en/help/",
@@ -13,12 +13,12 @@
   "contextSensitiveHelpUrl": "https://biz365.rs/en/help/",
   "applicationInsightsConnectionString": "InstrumentationKey=697002d3-7182-4876-bfa1-6ef0cba1905f;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/",
   "dependencies": [
-   {
-    "id": "1547e6af-b4b3-4213-94bd-0e982e458e5d",
-    "name": "DEV",
-    "publisher": "NPS d.o.o.",
-    "version": "20.0.0.0"
-   },
+    {
+      "id": "bfca9006-84a8-440c-b591-39fc15a06aa9",
+      "name": "GRITS",
+      "publisher": "Nemanja",
+      "version": "1.0.0.0"
+    },
    {
     "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
     "publisher": "Microsoft",

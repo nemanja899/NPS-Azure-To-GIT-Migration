@@ -33,9 +33,7 @@ table 50103 "Reservation Jnl Line"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                if Rec."Type" <> Enum::"Reservation Type"::Member then
-                    Rec."Club Member No." := '';
-
+                TestOnMember();
                 CalculateTotalFee();
             end;
         }
@@ -109,6 +107,13 @@ table 50103 "Reservation Jnl Line"
             MarketingSetup.TestField("Contact Nos.");
             NoSeriesManagement.InitSeries(MarketingSetup."Contact Nos.", xRec."No.", 0D, "No.", "No. Series");
         end;
+    end;
+
+    local procedure TestOnMember()
+    begin
+        if Type <> Enum::"Reservation Type"::Member then
+            exit;
+        TestField("Club Member No.");
     end;
 
     local procedure CalculateTotalFee()
