@@ -74,15 +74,15 @@ table 50102 "Club Member"
     }
 
     var
-        ReservationSetup: Record "Marketing Setup";
-        NoSeriesMgmt: Codeunit NoSeriesManagement;
+        MarketingSetup: Record "Marketing Setup";
+        NoSeriesManagement: Codeunit NoSeriesManagement;
 
     trigger OnInsert()
     begin
         if "No." = '' then begin
-            ReservationSetup.Get();
-            ReservationSetup.TestField("Opportunity Nos.");
-            NoSeriesMgmt.InitSeries(ReservationSetup."Opportunity Nos.", xRec."No.", 0D, "No.", "No. Series");
+            MarketingSetup.Get();
+            MarketingSetup.TestField("Opportunity Nos.");
+            NoSeriesManagement.InitSeries(MarketingSetup."Opportunity Nos.", xRec."No.", 0D, "No.", "No. Series");
         end;
 
 

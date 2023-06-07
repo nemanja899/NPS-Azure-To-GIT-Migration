@@ -1,16 +1,16 @@
 codeunit 50102 "Res. Jnl. Line - Post Line"
 {
-    procedure RunOnPostResJnlLineRecordToLedger(fromTable: Record "Reservation Jnl Line"; toTable: Record "Reservation Ledger Entry")
+    procedure RunOnPostResJnlLineRecordToLedger(ReservationJnlLine: Record "Reservation Jnl Line"; ReservationLedgerEntry: Record "Reservation Ledger Entry")
     begin
-        toTable.Init();
-        toTable."Golf Course No." := fromTable."Golf Course No.";
-        toTable."Reservation Type" := fromTable.Type;
-        toTable."Club Member No." := fromTable."Club Member No.";
-        toTable."Date of Play" := fromTable."Date of Play";
-        toTable."No. of Players" := fromTable."No. of Actual Players";
-        toTable."Tee TIme" := fromTable."Tee TIme";
-        toTable."Total Fee" := fromTable."Total Fee";
-        toTable.Insert(true);
+        ReservationLedgerEntry.Init();
+        ReservationLedgerEntry."Golf Course No." := ReservationJnlLine."Golf Course No.";
+        ReservationLedgerEntry."Reservation Type" := ReservationJnlLine.Type;
+        ReservationLedgerEntry."Club Member No." := ReservationJnlLine."Club Member No.";
+        ReservationLedgerEntry."Date of Play" := ReservationJnlLine."Date of Play";
+        ReservationLedgerEntry."No. of Players" := ReservationJnlLine."No. of Actual Players";
+        ReservationLedgerEntry."Tee TIme" := ReservationJnlLine."Tee TIme";
+        ReservationLedgerEntry."Total Fee" := ReservationJnlLine."Total Fee";
+        ReservationLedgerEntry.Insert(true);
 
     end;
 
