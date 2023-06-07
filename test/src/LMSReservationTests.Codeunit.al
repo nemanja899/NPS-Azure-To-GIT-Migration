@@ -23,13 +23,13 @@ codeunit 70046 "LMSReservation Tests"
         GolfCourse.Validate(Address, LibraryRandom.RandText(20));
         GolfCourse.Validate("Name", LibraryRandom.RandText(20));
         GolfCourse.Validate("Green Fee", LibraryRandom.RandDec(5, 0));
-        GolfCourse.Validate("No.", LibraryUtility.GetGlobalNoSeriesCode());
+        GolfCourse."No." := LibraryUtility.GetGlobalNoSeriesCode();
         GolfCourse.Insert();
 
         ReservationJnlLine.Init();
         ReservationJnlLine.Validate(Type, Enum::"Reservation Type"::Public);
         ReservationJnlLine.Validate("Date of Play", Today);
-        ReservationJnlLine.Validate("Golf Course No.", GolfCourse."No.");
+        ReservationJnlLine."Golf Course No." := GolfCourse."No.";
         ReservationJnlLine.Validate("No. of Actual Players", LibraryRandom.RandIntInRange(1, 50));
 
         ReservationJnlLine."No." := LibraryUtility.GetGlobalNoSeriesCode();
@@ -45,16 +45,13 @@ codeunit 70046 "LMSReservation Tests"
 
     local procedure calculateTotalFee(ReservationType: Enum "Reservation Type"; NoPlayers: Integer; GreenFee: Decimal): Decimal
     begin
-        case ReservationType of
-            "Reservation Type"::Comp:
-                exit(0);
-            "Reservation Type"::"Member":
-                exit(NoPlayers * GreenFee);
 
-            "Reservation Type"::Public:
-                exit(NoPlayers * GreenFee * 1.1);
-        end;
-
+        if ReservationType = "Reservation Type"::Comp then
+            exit(0);
+        if ReservationType = "Reservation Type"::Public then
+            exit(NoPlayers * GreenFee * 1.1);
+        if ReservationType = "Reservation Type"::Member then
+            exit(NoPlayers * GreenFee);
     end;
 
 
