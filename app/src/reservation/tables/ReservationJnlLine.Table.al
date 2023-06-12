@@ -33,8 +33,9 @@ table 50103 "Reservation Jnl Line"
             DataClassification = CustomerContent;
             trigger OnValidate()
             begin
-                TestOnMember();
                 CalculateTotalFee();
+                if TestOnMember() = false then
+                    Rec."Club Member No." := '';
             end;
         }
         field(5; "Club Member No."; Code[20])
@@ -58,6 +59,7 @@ table 50103 "Reservation Jnl Line"
             Caption = 'Total Fee';
             DataClassification = CustomerContent;
             Editable = false;
+
         }
         field(8; "Tee TIme"; Time)
         {
@@ -109,14 +111,14 @@ table 50103 "Reservation Jnl Line"
         end;
     end;
 
-    local procedure TestOnMember()
+    local procedure TestOnMember(): Boolean;
     begin
-        if Type <> Enum::"Reservation Type"::Member then
-            exit;
-        TestField("Club Member No.");
+        if (Type <> Enum::"Reservation Type"::Member) or (Type.AsInteger() = 0) then
+            exit(false);
+        exit(true);
     end;
 
-    local procedure CalculateTotalFee()
+    procedure CalculateTotalFee()
 
     var
         GolfCourse: Record "Golf Course";

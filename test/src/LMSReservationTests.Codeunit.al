@@ -20,20 +20,22 @@ codeunit 70046 "LMSReservation Tests"
 
         //[GIVEN] ReservationJnlLine types exist as member value
         GolfCourse.Init();
-        GolfCourse.Validate(Address, LibraryRandom.RandText(20));
-        GolfCourse.Validate("Name", LibraryRandom.RandText(20));
-        GolfCourse.Validate("Green Fee", LibraryRandom.RandDec(5, 0));
-        GolfCourse."No." := LibraryUtility.GetGlobalNoSeriesCode();
+        GolfCourse."No." := 'Z1234';
+        GolfCourse.Address := LibraryRandom.RandText(20);
+        GolfCourse."Name" := LibraryRandom.RandText(20);
+        GolfCourse."Green Fee" := LibraryRandom.RandDec(5, 0);
         GolfCourse.Insert();
+        Commit();
 
         ReservationJnlLine.Init();
-        ReservationJnlLine.Validate(Type, Enum::"Reservation Type"::Public);
-        ReservationJnlLine.Validate("Date of Play", Today);
-        ReservationJnlLine."Golf Course No." := GolfCourse."No.";
-        ReservationJnlLine.Validate("No. of Actual Players", LibraryRandom.RandIntInRange(1, 50));
-
         ReservationJnlLine."No." := LibraryUtility.GetGlobalNoSeriesCode();
+        ReservationJnlLine."Golf Course No." := 'Z1234';
+        ReservationJnlLine.Type := Enum::"Reservation Type"::Public;
+        ReservationJnlLine."Date of Play" := Today;
+        ReservationJnlLine."No. of Actual Players" := LibraryRandom.RandIntInRange(1, 50);
+        ReservationJnlLine.CalculateTotalFee();
         ReservationJnlLine.Insert();
+
         actualTotalFee := calculateTotalFee(ReservationJnlLine.Type, ReservationJnlLine."No. of Actual Players", GolfCourse."Green Fee");
         //[WHEN] when Customer No. is not specified
 
