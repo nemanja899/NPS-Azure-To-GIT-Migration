@@ -7,10 +7,10 @@
 			"path": "test"
 		},
 		{
-			"path": "scripts"
+			"path": ".AL-Go"
 		},
 		{
-			"path": ".azureDevOps"
+			"path": ".github"
 		}
 	],
 	"settings": {}
