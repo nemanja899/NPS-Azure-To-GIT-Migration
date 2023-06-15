@@ -11,7 +11,6 @@
   "url": "https://biz365.rs/plans-pricing/",
   "logo": "./images/nps-logo.jpg",
   "contextSensitiveHelpUrl": "https://biz365.rs/en/help/",
-  "applicationInsightsConnectionString": "InstrumentationKey=697002d3-7182-4876-bfa1-6ef0cba1905f;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/",
   "dependencies": [
    {
     "id": "1547e6af-b4b3-4213-94bd-0e982e458e5d",
