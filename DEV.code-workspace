@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "test"
+		},
+		{
+			"path": ".AL-Go"
+		},
+		{
+			"path": ".github"
 		}
 	],
 	"settings": {}
