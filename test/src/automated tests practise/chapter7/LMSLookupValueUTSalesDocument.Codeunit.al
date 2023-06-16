@@ -1,7 +1,6 @@
 codeunit 70050 "LookupValue UT Sales Document"
 {
     Subtype = Test;
-    TestPermissions = Disabled;
 
 
     [Test]
@@ -14,6 +13,8 @@ codeunit 70050 "LookupValue UT Sales Document"
         //[GIVEN] Lookup Value
         Initialize();
         //[GIVEN] Sa;es Header
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
+
         CreateSalesHeader(SalesHeader);
         //[WHen] Set lookup value on sales header 
         SetLookupValueOnSalesHeader(SalesHeader);
@@ -32,6 +33,8 @@ codeunit 70050 "LookupValue UT Sales Document"
         //[GIVEN] Lookup Value
         Initialize();
         //[GIVEN] SAles Quote document page
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
+
         CreateSalesQuoteDocument(SalesQuoteDocument);
         //[WHen] Set lookup value on sales page document 
         DocumentNo := SetLookupValueOnSalesQuoteDocument(SalesQuoteDocument);
@@ -49,6 +52,8 @@ codeunit 70050 "LookupValue UT Sales Document"
         //[SCENARIO #0007] Assign lookup value to sales order document page
         //[GIVEN] Lookup Value
         Initialize();
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
+
         //[GIVEN] Sa;es Order document page
         CreateSalesOrderDocument(SalesDocument);
         //[WHen] Set lookup value on sales order document
