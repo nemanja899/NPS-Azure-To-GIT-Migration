@@ -1,7 +1,6 @@
 codeunit 70049 "LMSLookupValue UT Customer"
 {
     Subtype = Test;
-    TestPermissions = Disabled;
 
 
     [Test]
@@ -10,7 +9,7 @@ codeunit 70049 "LMSLookupValue UT Customer"
         Customer: Record Customer;
         LookupValueCode: Code[10];
     begin
-
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         //[scenario #0001] Assign Lookup Value to Customer
         //[GIVEN] Lookup value
         LookupValueCode := CreateLookupValueCode();
@@ -30,6 +29,7 @@ codeunit 70049 "LMSLookupValue UT Customer"
         LookupValueCode: Code[10];
 
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         //[scenario #0002] Assign non-existent Lookup Value to Customer
         //[GIVEN] Non-exist Lookup value
         LookupValueCode := 'BN1234';
@@ -68,12 +68,14 @@ codeunit 70049 "LMSLookupValue UT Customer"
 
     local procedure CreateCustomerCard(var CustomerCard: TestPage "Customer Card")
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         CustomerCard.OpenNew();
     end;
 
     local procedure SetLookupValueOnCustomerCard(var CustomerCard: TestPage "Customer Card"; LookupValueCode: Code[10]) CustomerNo: Code[20]
 
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         Assert.IsTrue(CustomerCard."Lookup Value Code".Editable(), 'Editable');
         CustomerCard."Lookup Value Code".SetValue(LookupValueCode);
         CustomerNo := CopyStr(CustomerCard."No.".Value(), 1, MaxStrLen(CustomerNo));
@@ -86,6 +88,7 @@ codeunit 70049 "LMSLookupValue UT Customer"
         LookupValue: Record LookupValues;
 
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         LookupValue.Init();
         LookupValue.Validate(Code, LibraryUtility.GenerateRandomCode(LookupValue.FieldNo(Code), Database::LookupValues));
         LookupValue.Insert();
@@ -95,11 +98,13 @@ codeunit 70049 "LMSLookupValue UT Customer"
 
     local procedure CreateCustomer(var Customer: Record Customer)
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         LIbrarySales.CreateCustomer(Customer);
     end;
 
     local procedure SetLookupValueOnCustomer(var Customer: Record Customer; LookupValueCode: Code[10])
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         Customer.Validate("Lookup Value Code", LookupValueCode);
         Customer.Modify();
     end;
@@ -109,6 +114,7 @@ codeunit 70049 "LMSLookupValue UT Customer"
         Customer: Record Customer;
         FIeldOnTableTxt: Label '%1 on %2';
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         Customer.Get(CustomerNo);
         Assert.AreEqual(LookupValueCode, Customer."Lookup Value Code", StrSubstNo(FIeldOnTableTxt, Customer.FieldCaption("Lookup Value Code"), Customer.TableCaption()));
     end;
@@ -120,13 +126,14 @@ codeunit 70049 "LMSLookupValue UT Customer"
         LookupValue: Record LookupValues;
         ValueCannotBeFoundInTableTxt: Label 'The filed %1 of table %2 contains a value (%3) that cannot be found in the related table (%4)..';
     begin
-
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         //Assert.ExpectedError(StrSubstNo(ValueCannotBeFoundInTableTxt, Customer.FieldCaption("Lookup Value Code"), Customer.TableCaption(), LookupValueCode, LookupValue.TableCaption()));
     end;
 
     [ModalPageHandler]
     procedure HandleCustomerTemplList(var CustomerTemplList: TestPAge "Select Customer Templ. List")
     begin
+        LibraryLowerPermissions.AddPermissionSet('nemanjaPermisionSet');
         CustomerTemplList.OK.Invoke();
     end;
 
@@ -135,5 +142,8 @@ codeunit 70049 "LMSLookupValue UT Customer"
         LIbrarySales: Codeunit "Library - Sales";
 
         Assert: Codeunit Assert;
+
+        LibraryLowerPermissions: Codeunit "Library - Lower Permissions";
+
 }
 
