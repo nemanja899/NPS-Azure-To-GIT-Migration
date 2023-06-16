@@ -1,6 +1,8 @@
 codeunit 70050 "LookupValue UT Sales Document"
 {
     Subtype = Test;
+    TestPermissions = Disabled;
+
 
     [Test]
     procedure AssignLookupValueToSalesHeader()
