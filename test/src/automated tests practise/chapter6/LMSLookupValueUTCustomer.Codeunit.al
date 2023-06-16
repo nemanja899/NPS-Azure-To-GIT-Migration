@@ -1,7 +1,8 @@
 codeunit 70049 "LMSLookupValue UT Customer"
 {
     Subtype = Test;
-    // TestPermissions = Disabled;
+    TestPermissions = Disabled;
+
 
     [Test]
     procedure AssignLookupValueToCustomer()
@@ -9,6 +10,7 @@ codeunit 70049 "LMSLookupValue UT Customer"
         Customer: Record Customer;
         LookupValueCode: Code[10];
     begin
+
         //[scenario #0001] Assign Lookup Value to Customer
         //[GIVEN] Lookup value
         LookupValueCode := CreateLookupValueCode();
