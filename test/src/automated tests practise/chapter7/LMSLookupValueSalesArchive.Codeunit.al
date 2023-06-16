@@ -38,6 +38,15 @@ codeunit 70051 "LMSLookupValue Sales Archive"
         exit(SalesHeader."No.");
     end;
 
+    local procedure ArchiveSalesDocument(SalesHeader: Record "Sales Header")
+    begin
+
+    end;
+
+    local procedure VerifyLookupValueOnSalesDOcumentArchive(DocumentTypeParam: Enum "Sales Document Type"; SalesHeaderNo: Code[20]; LookupValueCode: Code[10]; VersionNo: Integer)
+    begin
+
+    end;
 
     local procedure CreateSalesDocumentWithLookupValue(var SalesHeader: Record "Sales Header"; DocumentType: Enum "Sales Document Type")
     begin
