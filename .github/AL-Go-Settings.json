@@ -4,5 +4,5 @@
   "environments": ["QA","FAT","PROD (PROD)"],
   "FAT_AuthContextSecretName": "QA_AuthContext",
   "PROD_AuthContextSecretName": "QA_AuthContext",
-  "doNotRunBcptTests": true,
+  "doNotRunBcptTests": true
 }
